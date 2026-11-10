@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKBM Nihaya - Langsa Barat, Kota Langsa</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            800: '#065f46',
+                            900: '#064e3b',
+                            950: '#022c22',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        teal: {
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-slate-50 antialiased selection:bg-emerald-800 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-emerald-950 text-white text-xs font-medium py-2 px-4 border-b border-emerald-900">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-2">
+                <span class="bg-amber-500 text-gray-950 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">DAPODIK RESMI</span>
+                <span>PKBM Nihaya - Langsa Barat, Kota Langsa, Aceh</span>
+            </div>
+            <div class="flex items-center gap-4 text-emerald-200">
+                <span><i class="fa-solid fa-id-card text-amber-400 mr-1"></i> NPSN: P2970450</span>
+                <span><i class="fa-solid fa-award text-amber-400 mr-1"></i> Akreditasi C</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-calendar text-amber-400 mr-1"></i> Semester 2026/2027 Gasal</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-emerald-800 to-teal-600 rounded-xl flex items-center justify-center text-white text-xl font-bold shadow-md shadow-emerald-800/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg font-extrabold text-gray-900 tracking-tight leading-none">PKBM NIHAYA</span>
+                            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full border border-emerald-200">Swasta</span>
+                        </div>
+                        <span class="text-xs text-teal-700 font-semibold tracking-wide">Kec. Langsa Barat, Kota Langsa</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8 font-medium text-gray-600 text-sm">
+                    <a href="#beranda" class="hover:text-emerald-700 transition-colors py-2 border-b-2 border-transparent hover:border-emerald-700">Beranda</a>
+                    <a href="#profil" class="hover:text-emerald-700 transition-colors py-2 border-b-2 border-transparent hover:border-emerald-700">Profil & Keunggulan</a>
+                    <a href="#dapodik" class="hover:text-emerald-700 transition-colors py-2 border-b-2 border-transparent hover:border-emerald-700">Data Dapodik</a>
+                    <a href="#program" class="hover:text-emerald-700 transition-colors py-2 border-b-2 border-transparent hover:border-emerald-700">Program Belajar</a>
+                    <a href="#pendaftaran" class="hover:text-emerald-700 transition-colors py-2 border-b-2 border-transparent hover:border-emerald-700">PPDB Online</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="#pendaftaran" class="bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-2.5 rounded-xl font-semibold shadow-md shadow-emerald-700/20 hover:shadow-lg transition-all text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-user-plus"></i> Daftar PPDB
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#beranda" class="mobile-nav-link block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50">Beranda</a>
+            <a href="#profil" class="mobile-nav-link block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50">Profil & Keunggulan</a>
+            <a href="#dapodik" class="mobile-nav-link block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50">Data Dapodik</a>
+            <a href="#program" class="mobile-nav-link block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50">Program Belajar</a>
+            <a href="#pendaftaran" class="mobile-nav-link block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50">PPDB Online</a>
+            <a href="#pendaftaran" class="mobile-nav-link block text-center bg-emerald-700 text-white px-4 py-2.5 rounded-xl font-semibold mt-4">
+                <i class="fa-solid fa-user-plus mr-2"></i>Daftar Sekarang
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="pt-12 pb-20 md:pt-20 md:pb-28 bg-gradient-to-b from-emerald-50/60 via-white to-slate-50 relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-emerald-100/50 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-teal-100/40 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-semibold shadow-sm">
+                        <span class="flex h-2 w-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                        Menerapkan Kurikulum Paket C Merdeka
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                        Wujudkan Masa Depan Cerah Bersama <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-800 via-teal-700 to-emerald-600">PKBM NIHAYA</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Pusat Kegiatan Belajar Masyarakat (PKBM) Nihaya menyelenggarakan pendidikan kesetaraan nonformal berkualitas di Kecamatan Langsa Barat. Solusi tepat raih ijazah resmi kesetaraan dan keterampilan mandiri.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#pendaftaran" class="w-full sm:w-auto px-8 py-4 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl shadow-lg shadow-emerald-700/30 hover:shadow-xl transition-all hover:-translate-y-0.5 text-center">
+                            Daftar Pendaftaran Online <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#dapodik" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-gray-50 text-gray-700 font-semibold border border-gray-200 rounded-xl shadow-sm transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-chart-line text-emerald-700"></i> Lihat Statistik Dapodik
+                        </a>
+                    </div>
+
+                    <!-- Highlights Grid -->
+                    <div class="pt-8 border-t border-gray-200 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-emerald-800">86</p>
+                            <p class="text-xs sm:text-sm text-gray-500 font-medium">Siswa Aktif (WB)</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-emerald-800">3</p>
+                            <p class="text-xs sm:text-sm text-gray-500 font-medium">Ruang Kelas & Rombel</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-emerald-800">P2970450</p>
+                            <p class="text-xs sm:text-sm text-gray-500 font-medium">NPSN Resmi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl bg-white border-4 border-white">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Suasana Belajar PKBM Nihaya" 
+                                 class="w-full h-80 sm:h-96 object-cover"
+                                 onerror="this.src='https://placehold.co/600x800/065f46/ffffff?text=PKBM+Nihaya+Langsa'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-amber-500 text-slate-950 text-xs font-bold px-2.5 py-1 rounded-full">Akreditasi C</span>
+                                    <span class="bg-emerald-600 text-xs font-bold px-2.5 py-1 rounded-full">Semester 2026/2027 Gasal</span>
+                                </div>
+                                <p class="font-bold text-lg">Komplek Perumahan BTN Seuriget</p>
+                                <p class="text-xs text-emerald-200 mt-1">Kec. Langsa Barat, Kota Langsa, Prov. Aceh</p>
+                            </div>
+                        </div>
+
+                        <!-- Badge Overlay -->
+                        <div class="absolute -bottom-6 -left-6 z-20 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3 hidden sm:flex">
+                            <div class="w-10 h-10 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-medium">Kurikulum Operasional</p>
+                                <p class="text-sm font-bold text-gray-800">Paket C Merdeka</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profil & Keunggulan -->
+    <section id="profil" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" 
+                             alt="Pendidikan Kesetaraan PKBM Nihaya" 
+                             class="w-full h-96 object-cover"
+                             onerror="this.src='https://placehold.co/800x600/065f46/ffffff?text=PKBM+Nihaya'">
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded-full uppercase tracking-wider">
+                        Tentang Lembaga
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
+                        Membangun Generasi Terampil & Berdaya Saing
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        <strong>PKBM Nihaya</strong> berlokasi di Komplek Perumahan BTN Seuriget, Kecamatan Langsa Barat. Berkomitmen membuka akses pendidikan seluas-luasnya bagi seluruh lapisan masyarakat yang memerlukan layanan pendidikan kesetaraan nonformal.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Dengan sistem kurikulum Paket C Merdeka, proses belajar mengajar didesain fleksibel (Siang / 6 Hari) sehingga warga belajar dapat menuntaskan pendidikan tanpa mengganggu aktivitas atau pekerjaan harian.
+                    </p>
+
+                    <!-- Pillar Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 bg-slate-50 rounded-xl border border-gray-200">
+                            <div class="text-emerald-700 mb-2 text-xl"><i class="fa-solid fa-certificate"></i></div>
+                            <h3 class="font-bold text-gray-900 text-sm mb-1">Ijazah Resmi Negara</h3>
+                            <p class="text-xs text-gray-600">Ijazah Paket C setara SMA yang diakui penuh untuk kuliah maupun kerja.</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-xl border border-gray-200">
+                            <div class="text-emerald-700 mb-2 text-xl"><i class="fa-solid fa-wifi"></i></div>
+                            <h3 class="font-bold text-gray-900 text-sm mb-1">Akses Internet Broadband</h3>
+                            <p class="text-xs text-gray-600">Didukung sarana internet modern untuk pembelajaran berbasis digital.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Dapodik Resmi -->
+    <section id="dapodik" class="py-20 bg-emerald-950 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="bg-amber-500 text-slate-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Integrasi Kemendikbudristek</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Data Pokok Sekolah (Dapodik)</h2>
+                <p class="text-emerald-200 text-sm">Informasi statistik dan identitas resmi PKBM Nihaya berdasarkan data Dapodik terkini</p>
+            </div>
+
+            <!-- Grid Ringkasan Utama -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center mb-12">
+                <div class="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-white/10">
+                    <i class="fa-solid fa-id-card text-amber-400 text-2xl mb-2"></i>
+                    <p class="text-xs text-emerald-200">NPSN Resmi</p>
+                    <p class="font-bold text-lg text-white">P2970450</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-white/10">
+                    <i class="fa-solid fa-award text-amber-400 text-2xl mb-2"></i>
+                    <p class="text-xs text-emerald-200">Akreditasi</p>
+                    <p class="font-bold text-lg text-amber-400">C</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-white/10">
+                    <i class="fa-solid fa-school text-amber-400 text-2xl mb-2"></i>
+                    <p class="text-xs text-emerald-200">Bentuk Pendidikan</p>
+                    <p class="font-bold text-lg text-white">PKBM</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-white/10">
+                    <i class="fa-solid fa-building-flag text-amber-400 text-2xl mb-2"></i>
+                    <p class="text-xs text-emerald-200">Status Sekolah</p>
+                    <p class="font-bold text-lg text-white">SWASTA</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-white/10">
+                    <i class="fa-solid fa-users text-amber-400 text-2xl mb-2"></i>
+                    <p class="text-xs text-emerald-200">Total Siswa</p>
+                    <p class="font-bold text-lg text-white">86 Siswa</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-white/10">
+                    <i class="fa-solid fa-location-dot text-amber-400 text-2xl mb-2"></i>
+                    <p class="text-xs text-emerald-200">Wilayah</p>
+                    <p class="font-bold text-lg text-emerald-200">Langsa Barat</p>
+                </div>
+            </div>
+
+            <!-- Detail Tabel Dapodik -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Utilitas Sarana & Prasarana -->
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-building-columns text-emerald-400"></i> Utilitas & Sarana Prasarana
+                    </h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center p-3 bg-white/5 rounded-xl">
+                            <span class="text-emerald-200">Ruang Kelas Tersedia</span>
+                            <span class="font-semibold text-white">3 Ruang Kelas</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white/5 rounded-xl">
+                            <span class="text-emerald-200">Laboratorium & Perpustakaan</span>
+                            <span class="font-semibold text-white">0 / 0</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white/5 rounded-xl">
+                            <span class="text-emerald-200">Akses Internet</span>
+                            <span class="font-semibold text-emerald-300">Broadband</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white/5 rounded-xl">
+                            <span class="text-emerald-200">Sumber & Daya Listrik</span>
+                            <span class="font-semibold text-white">PLN / 2.200 VA</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white/5 rounded-xl">
+                            <span class="text-emerald-200">Luas Tanah Terdaftar</span>
+                            <span class="font-semibold text-white">150 m²</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistik Peserta Belajar -->
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-pie text-emerald-400"></i> Data Pembelajaran & Warga Belajar
+                    </h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center p-3 bg-white/5 rounded-xl">
+                            <span class="text-emerald-200">Siswa Laki-laki</span>
+                            <span class="font-semibold text-white">41 Siswa</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white/5 rounded-xl">
+                            <span class="text-emerald-200">Siswa Perempuan</span>
+                            <span class="font-semibold text-white">45 Siswa</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white/5 rounded-xl">
+                            <span class="text-emerald-200">Rombongan Belajar (Rombel)</span>
+                            <span class="font-semibold text-white">3 Rombel (Rasio 29 Siswa/Rombel)</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white/5 rounded-xl">
+                            <span class="text-emerald-200">Kurikulum Operasional</span>
+                            <span class="font-semibold text-amber-300">Kurikulum Paket C Merdeka</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white/5 rounded-xl">
+                            <span class="text-emerald-200">Waktu Penyelenggaraan</span>
+                            <span class="font-semibold text-white">Siang / 6 Hari Kerja</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Pendidikan Kesetaraan -->
+    <section id="program" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <div class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded-full uppercase tracking-wider">
+                    Program Utama
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Program Pendidikan Kesetaraan</h2>
+                <p class="text-gray-600 text-base">
+                    Program belajar yang fleksibel dan berstandar nasional untuk membantu lulusan memperoleh ijazah resmi negara.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Paket C -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-emerald-100 hover:shadow-xl transition-shadow flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-emerald-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl">UTAMA</div>
+                    <div>
+                        <div class="w-14 h-14 bg-emerald-100 text-emerald-800 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Paket C (Setara SMA)</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                            Program kesetaraan jenjang SMA dengan penerapan Kurikulum Paket C Merdeka. Cocok bagi yang ingin melanjutkan ke Perguruan Tinggi atau dunia kerja.
+                        </p>
+                        <ul class="text-xs text-gray-600 space-y-3 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 font-bold"></i> Kurikulum Merdeka Terkini</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 font-bold"></i> Jadwal Belajar Siang Hari</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 font-bold"></i> Ijazah Resmi Negara</li>
+                        </ul>
+                    </div>
+                    <a href="#pendaftaran" class="block text-center w-full py-3 bg-emerald-700 text-white font-semibold rounded-xl hover:bg-emerald-800 transition-colors">Daftar Paket C</a>
+                </div>
+
+                <!-- Paket B -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-200 hover:shadow-xl transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-teal-100 text-teal-800 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Paket B (Setara SMP)</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                            Program kesetaraan tingkat Sekolah Menengah Pertama (SMP) untuk memenuhi penuntasan Wajib Belajar 9 Tahun.
+                        </p>
+                        <ul class="text-xs text-gray-600 space-y-3 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 font-bold"></i> Materi Pelajaran Lengkap</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 font-bold"></i> Pendampingan Pengajar</li>
+                        </ul>
+                    </div>
+                    <a href="#pendaftaran" class="block text-center w-full py-3 bg-slate-100 text-gray-800 font-semibold rounded-xl hover:bg-slate-200 transition-colors">Daftar Paket B</a>
+                </div>
+
+                <!-- Paket A -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-200 hover:shadow-xl transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-child-reaching"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Paket A (Setara SD)</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                            Layanan pendidikan dasar setara SD bagi masyarakat umum yang belum memiliki atau belum menyelesaikan pendidikan Sekolah Dasar.
+                        </p>
+                        <ul class="text-xs text-gray-600 space-y-3 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 font-bold"></i> Fondasi Literasi & Numerasi</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 font-bold"></i> Lingkungan Ramah Belajar</li>
+                        </ul>
+                    </div>
+                    <a href="#pendaftaran" class="block text-center w-full py-3 bg-slate-100 text-gray-800 font-semibold rounded-xl hover:bg-slate-200 transition-colors">Daftar Paket A</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulir Pendaftaran (PPDB) -->
+    <section id="pendaftaran" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto bg-gradient-to-b from-slate-50 to-emerald-50/40 p-8 sm:p-12 rounded-3xl border border-emerald-100 shadow-xl">
+                <div class="text-center space-y-3 mb-8">
+                    <span class="bg-emerald-700 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Pendaftaran Online</span>
+                    <h2 class="text-3xl font-extrabold text-gray-900">Formulir PPDB PKBM Nihaya</h2>
+                    <p class="text-gray-600 text-sm">Isi data calon warga belajar di bawah ini. Tim administrasi kami akan mengonfirmasi pendaftaran Anda.</p>
+                </div>
+
+                <form id="ppdb-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Nama Lengkap *</label>
+                            <input type="text" id="nama" required placeholder="Sesuai KTP / Akta" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none text-sm transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Nomor WhatsApp / HP *</label>
+                            <input type="tel" id="telepon" required placeholder="Contoh: 08123456789" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none text-sm transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Program Yang Dipilih *</label>
+                            <select id="program_pilihan" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none text-sm transition bg-white">
+                                <option value="">-- Pilih Program --</option>
+                                <option value="Paket C (Setara SMA)">Paket C (Setara SMA) - Kurikulum Merdeka</option>
+                                <option value="Paket B (Setara SMP)">Paket B (Setara SMP)</option>
+                                <option value="Paket A (Setara SD)">Paket A (Setara SD)</option>
+                                <option value="Kursus / Keterampilan">Kursus / Keterampilan</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Jenis Kelamin *</label>
+                            <select id="jk" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none text-sm transition bg-white">
+                                <option value="">-- Pilih Jenis Kelamin --</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Alamat Domisili Lengkap</label>
+                        <textarea id="alamat" rows="3" placeholder="Nama Jalan, Desa/Kelurahan, Kecamatan" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none text-sm transition"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl shadow-lg shadow-emerald-700/30 transition-all text-base flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Kirim Form Pendaftaran via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak & Lokasi Section -->
+    <section id="kontak" class="py-20 bg-slate-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <div class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded-full uppercase tracking-wider mb-3">
+                            Informasi Alamat
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Alamat & Lokasi PKBM</h2>
+                        <p class="text-gray-600 text-sm mt-2">PKBM Nihaya berkedudukan strategis di Komplek Perumahan BTN Seuriget, Kecamatan Langsa Barat.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-emerald-800 text-white rounded-xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-sm">Alamat Resmi</h4>
+                                <p class="text-gray-600 text-sm mt-1">Komplek Perumahan BTN Seuriget, Kec. Langsa Barat, Kota Langsa, Prov. Aceh</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-emerald-800 text-white rounded-xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-id-card"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-sm">Legalitas Kemendikbudristek</h4>
+                                <p class="text-gray-600 text-sm mt-1">NPSN: <strong>P2970450</strong> | Akreditasi: <strong>C</strong> | Bentuk: <strong>PKBM</strong></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-emerald-800 text-white rounded-xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-sm">Waktu Operasional Belajar</h4>
+                                <p class="text-gray-600 text-sm mt-1">Siang Hari / 6 Hari Kerja (Senin - Sabtu)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed -->
+                <div class="lg:col-span-7">
+                    <div class="w-full h-full min-h-[350px] bg-gray-200 rounded-3xl overflow-hidden shadow-md relative border border-gray-200">
+                        <iframe 
+                            class="w-full h-full min-h-[350px]"
+                            src="https://maps.google.com/maps?q=BTN+Seuriget+Langsa+Aceh&z=15&output=embed" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-950 text-emerald-300 py-12 border-t border-emerald-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-emerald-900">
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-emerald-800 text-white rounded-xl flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-book-open-reader"></i>
+                        </div>
+                        <div>
+                            <span class="text-base font-bold text-white tracking-tight block">PKBM NIHAYA</span>
+                            <span class="text-xs text-emerald-400">Kota Langsa, Prov. Aceh</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-emerald-200 max-w-sm leading-relaxed">
+                        Pusat Kegiatan Belajar Masyarakat (PKBM) Nihaya. Terdaftar di Kemendikbudristek dengan NPSN P2970450. Menyelenggarakan pendidikan Paket A, B, C, dan Keterampilan.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Navigasi Website</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#beranda" class="hover:text-amber-400 transition-colors">Beranda</a></li>
+                        <li><a href="#profil" class="hover:text-amber-400 transition-colors">Profil Lembaga</a></li>
+                        <li><a href="#dapodik" class="hover:text-amber-400 transition-colors">Data Dapodik</a></li>
+                        <li><a href="#program" class="hover:text-amber-400 transition-colors">Program Belajar</a></li>
+                        <li><a href="#pendaftaran" class="hover:text-amber-400 transition-colors">PPDB Online</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Alamat Lembaga</h4>
+                    <p class="text-xs text-emerald-200 leading-relaxed mb-3">
+                        Komplek Perumahan BTN Seuriget, Kec. Langsa Barat, Kota Langsa, Prov. Aceh.
+                    </p>
+                    <p class="text-xs text-amber-400 font-medium">NPSN: P2970450</p>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-emerald-400">
+                <p>&copy; 2026 PKBM Nihaya. All rights reserved.</p>
+                <p>NPSN: P2970450 | Langsa Barat, Kota Langsa</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // WhatsApp Form Handler
+        const ppdbForm = document.getElementById('ppdb-form');
+        ppdbForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const nama = document.getElementById('nama').value;
+            const telepon = document.getElementById('telepon').value;
+            const program = document.getElementById('program_pilihan').value;
+            const jk = document.getElementById('jk').value;
+            const alamat = document.getElementById('alamat').value;
+
+            const message = `Halo Admin PKBM Nihaya,%0A%0ASaya ingin mendaftar sebagai Calon Warga Belajar:%0A` +
+                            `- *Nama*: ${encodeURIComponent(nama)}%0A` +
+                            `- *No. WA/HP*: ${encodeURIComponent(telepon)}%0A` +
+                            `- *Jenis Kelamin*: ${encodeURIComponent(jk)}%0A` +
+                            `- *Program Pilihan*: ${encodeURIComponent(program)}%0A` +
+                            `- *Alamat*: ${encodeURIComponent(alamat)}%0A%0A` +
+                            `Mohon informasi alur pendaftaran selanjutnya. Terima kasih!`;
+
+            // Default admin number or fallback prompt
+            const whatsappUrl = `https://wa.me/?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
